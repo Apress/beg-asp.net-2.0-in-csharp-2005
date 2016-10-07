@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost/WebServices/StockQuote.asmx?wsdl" docRef="http://localhost/WebServices/StockQuote.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://localhost/WebServices/StockQuote.asmx" xmlns:q1="http://www.prosetech.com/Stocks" binding="q1:StockQuoteSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://localhost/WebServices/StockQuote.asmx" xmlns:q2="http://www.prosetech.com/Stocks" binding="q2:StockQuoteSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

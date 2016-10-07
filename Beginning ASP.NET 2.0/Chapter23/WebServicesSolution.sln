@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "E:\...\WebClient\", "WebClient\", "{D16FF121-3D37-4C7A-BC37-02965B8FAD0D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/WebClient"
+		Debug.AspNetCompiler.PhysicalPath = "E:\Code\Beginning ASP.NET 2.0\Chapter22\WebClient\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebClient\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebClient"
+		Release.AspNetCompiler.PhysicalPath = "E:\Code\Beginning ASP.NET 2.0\Chapter22\WebClient\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebClient\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1531"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "http://localhost/WebServices2/", "http://localhost/WebServices2", "{672E3E81-4256-4FCB-8AAD-3B251FCF0C26}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/WebServices2"
+		Debug.AspNetCompiler.PhysicalPath = "e:\code\beginning asp.net 2.0\chapter22\webservices\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebServices\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebServices2"
+		Release.AspNetCompiler.PhysicalPath = "e:\code\beginning asp.net 2.0\chapter22\webservices\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebServices\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "e:\code\beginning asp.net 2.0\chapter22\webservices\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D16FF121-3D37-4C7A-BC37-02965B8FAD0D}.Debug|.NET.ActiveCfg = Debug|.NET
+		{D16FF121-3D37-4C7A-BC37-02965B8FAD0D}.Debug|.NET.Build.0 = Debug|.NET
+		{672E3E81-4256-4FCB-8AAD-3B251FCF0C26}.Debug|.NET.ActiveCfg = Debug|.NET
+		{672E3E81-4256-4FCB-8AAD-3B251FCF0C26}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

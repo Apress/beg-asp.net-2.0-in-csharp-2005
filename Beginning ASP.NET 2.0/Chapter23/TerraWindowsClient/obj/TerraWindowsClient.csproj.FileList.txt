@@ -1,0 +1,10 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\WindowsTerraClient.Form1.resources
+obj\Debug\WindowsTerraClient.Properties.Resources.resources
+obj\Debug\WindowsTerraClient.csproj.GenerateResource.Cache
+bin\Debug\WindowsTerraClient.exe.config
+bin\Debug\WindowsTerraClient.exe
+bin\Debug\WindowsTerraClient.pdb
+obj\Debug\WindowsTerraClient.exe
+obj\Debug\WindowsTerraClient.pdb
+bin\Debug\TerraWindowsClient.exe.config

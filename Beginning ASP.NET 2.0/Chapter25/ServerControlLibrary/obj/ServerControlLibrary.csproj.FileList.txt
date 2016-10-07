@@ -1,0 +1,5 @@
+bin\Debug\ServerControlLibrary.dll
+bin\Debug\ServerControlLibrary.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ServerControlLibrary.dll
+obj\Debug\ServerControlLibrary.pdb

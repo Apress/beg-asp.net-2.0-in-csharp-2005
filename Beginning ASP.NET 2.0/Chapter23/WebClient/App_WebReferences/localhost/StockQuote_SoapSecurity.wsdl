@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.prosetech.com/Stocks" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.prosetech.com/Stocks" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Methods to get stock information.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.prosetech.com/Stocks">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LicenseKeyHeader" type="tns:LicenseKeyHeader" />
+      <s:complexType name="LicenseKeyHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Ticket" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetStockQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ticker" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetStockQuoteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTestUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTestUserResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginLicenseKeyHeader">
+    <wsdl:part name="LicenseKeyHeader" element="tns:LicenseKeyHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStockQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetStockQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockQuoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockQuoteLicenseKeyHeader">
+    <wsdl:part name="LicenseKeyHeader" element="tns:LicenseKeyHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateTestUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTestUser" />
+  </wsdl:message>
+  <wsdl:message name="CreateTestUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTestUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StockQuote_SoapSecuritySoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockQuote">
+      <wsdl:input message="tns:GetStockQuoteSoapIn" />
+      <wsdl:output message="tns:GetStockQuoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTestUser">
+      <wsdl:input message="tns:CreateTestUserSoapIn" />
+      <wsdl:output message="tns:CreateTestUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StockQuote_SoapSecuritySoap" type="tns:StockQuote_SoapSecuritySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://www.prosetech.com/Stocks/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoginLicenseKeyHeader" part="LicenseKeyHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockQuote">
+      <soap:operation soapAction="http://www.prosetech.com/Stocks/GetStockQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStockQuoteLicenseKeyHeader" part="LicenseKeyHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTestUser">
+      <soap:operation soapAction="http://www.prosetech.com/Stocks/CreateTestUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StockQuote_SoapSecuritySoap12" type="tns:StockQuote_SoapSecuritySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://www.prosetech.com/Stocks/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoginLicenseKeyHeader" part="LicenseKeyHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockQuote">
+      <soap12:operation soapAction="http://www.prosetech.com/Stocks/GetStockQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStockQuoteLicenseKeyHeader" part="LicenseKeyHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTestUser">
+      <soap12:operation soapAction="http://www.prosetech.com/Stocks/CreateTestUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StockQuote_SoapSecurity">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Methods to get stock information.</wsdl:documentation>
+    <wsdl:port name="StockQuote_SoapSecuritySoap" binding="tns:StockQuote_SoapSecuritySoap">
+      <soap:address location="http://localhost/WebServices2/StockQuote_SoapSecurity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StockQuote_SoapSecuritySoap12" binding="tns:StockQuote_SoapSecuritySoap12">
+      <soap12:address location="http://localhost/WebServices2/StockQuote_SoapSecurity.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
